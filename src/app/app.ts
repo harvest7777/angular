@@ -1,7 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +10,4 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class App {
   protected readonly title = signal('lebron');
-  protected readonly auth = inject(AuthService);
-  protected readonly isAuthenticated = toSignal(this.auth.isAuthenticated$, { initialValue: false });
-  protected readonly isLoading = toSignal(this.auth.isLoading$, { initialValue: true });
-
-  login(): void {
-    this.auth.loginWithRedirect();
-  }
-
-  logout(): void {
-    this.auth.logout({
-      logoutParams: { returnTo: window.location.origin },
-    });
-  }
 }
