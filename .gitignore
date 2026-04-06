@@ -5,6 +5,9 @@
 .skills
 .claude
 
+# IDE
+.vscode
+
 # Compiled output
 /dist
 /tmp
