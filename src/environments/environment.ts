@@ -1,10 +1,10 @@
 export const environment = {
   production: false,
   auth0: {
-    domain: 'YOUR_AUTH0_DOMAIN', // e.g. dev-abc123.us.auth0.com
-    clientId: 'YOUR_AUTH0_CLIENT_ID',
+    domain: 'duckies.us.auth0.com',
+    clientId: 'XIcf889dKOpXZue9cFehIC3G2lsQCFYv',
     authorizationParams: {
-      redirect_uri: 'http://localhost:4200',
+      redirect_uri: typeof window !== 'undefined' ? window.location.origin : 'http://localhost:4200',
     },
   },
 };

@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterOutlet } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +22,7 @@ export class App {
 
   logout(): void {
     this.auth.logout({
-      logoutParams: { returnTo: environment.auth0.authorizationParams.redirect_uri },
+      logoutParams: { returnTo: window.location.origin },
     });
   }
 }

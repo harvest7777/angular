@@ -4,7 +4,7 @@ export const environment = {
     domain: 'YOUR_AUTH0_DOMAIN',
     clientId: 'YOUR_AUTH0_CLIENT_ID',
     authorizationParams: {
-      redirect_uri: 'https://YOUR_PRODUCTION_URL',
+      redirect_uri: typeof window !== 'undefined' ? window.location.origin : 'https://YOUR_PRODUCTION_URL',
     },
   },
 };
