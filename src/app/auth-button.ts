@@ -1,17 +1,22 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AuthService } from '@auth0/auth0-angular';
+import { MatButton } from '@angular/material/button';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'auth-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MatButton, MatProgressSpinner],
   template: `
     @if (isLoading()) {
-      <span aria-live="polite">Loading...</span>
+      <button matButton type="button" disabled>
+        <mat-progress-spinner mode="indeterminate" diameter="20" />
+      </button>
     } @else if (isAuthenticated()) {
-      <button type="button" (click)="logout()">Log out</button>
+      <button matButton type="button" (click)="logout()">Log out</button>
     } @else {
-      <button type="button" (click)="login()">Log in</button>
+      <button matButton type="button" (click)="login()">Log in</button>
     }
   `,
 })
