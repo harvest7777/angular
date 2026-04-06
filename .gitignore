@@ -3,6 +3,7 @@
 # Agent stuff
 .agents
 .skills
+.claude
 
 # Compiled output
 /dist
