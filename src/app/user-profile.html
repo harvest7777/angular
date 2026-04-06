@@ -1,0 +1,8 @@
+<div>
+  <h1>Profile for {{ userName() }}</h1>
+  <button   [class.bg-red-500]="!isTrial()"
+            [class.bg-green-500]="isTrial()"
+            (click)="toggleTrial()">
+    activate trial</button>
+  <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+</div>
