@@ -2,7 +2,10 @@ import { RenderMode, ServerRoute } from '@angular/ssr';
 
 export const serverRoutes: ServerRoute[] = [
   {
-    // Auth-protected route must render client-side only
+    path: '',
+    renderMode: RenderMode.Client,
+  },
+  {
     path: 'admin',
     renderMode: RenderMode.Client,
   },
